@@ -35,6 +35,46 @@
         <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@Damage,Amount" Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
         <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@Damage,Amount" Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
         <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@Damage,Amount" Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice}"/>
+        <!-- S P E C I A L   D A M A G E   T Y P E S -->
+        <!-- GROUND+AIR -->
+        <!-- concussive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageConcussiveLarge,Amount"                    Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageConcussiveLargeShields,ShieldBonus"        Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*3/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageConcussiveMedium,Amount"                   Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageConcussiveMediumShields,ShieldBonus"       Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageConcussiveSmall,Amount"                    Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2}"/>
+        <!-- explosive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageExplosiveLarge,Amount"                     Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*4/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageExplosiveMedium,Amount"                    Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageExplosiveMediumShields,ShieldBonus"        Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*1/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageExplosiveSmall,Amount"                     Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^Weapon@DamageExplosiveSmallShields,ShieldBonus"         Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2/3}"/>
+        <!-- AIR -->
+        <!-- concussive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageConcussiveLarge,Amount"                 Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageConcussiveLargeShields,ShieldBonus"     Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*3/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageConcussiveMedium,Amount"                Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageConcussiveMediumShields,ShieldBonus"    Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageConcussiveSmall,Amount"                 Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2}"/>
+        <!-- explosive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageExplosiveLarge,Amount"                  Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*4/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageExplosiveMedium,Amount"                 Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageExplosiveMediumShields,ShieldBonus"     Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*1/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageExplosiveSmall,Amount"                  Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponAir@DamageExplosiveSmallShields,ShieldBonus"      Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[0].DamagePerDice*2/3}"/>
+        <!-- GROUND -->
+        <!-- concussive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageConcussiveLarge,Amount"              Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageConcussiveLargeShields,ShieldBonus"  Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*3/2}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageConcussiveMedium,Amount"             Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageConcussiveMediumShields,ShieldBonus" Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageConcussiveSmall,Amount"              Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*2}"/>
+        <!-- explosive -->
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageExplosiveLarge,Amount"               Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*4/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageExplosiveMedium,Amount"              Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageExplosiveMediumShields,ShieldBonus"  Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*1/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageExplosiveSmall,Amount"               Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*2/3}"/>
+        <EffectArrayTemplate Reference="Effect,^ParamId^WeaponGround@DamageExplosiveSmallShields,ShieldBonus"   Value="{DataCollection,^ParamId^,UpgradeInfoWeapon[1].DamagePerDice*2/3}"/>
         <ScoreCount value="WeaponTechnologyCount"/>
         <ScoreValue value="WeaponTechnologyValue"/>
         <EditorCategories value="UpgradeType:AttackBonus"/>

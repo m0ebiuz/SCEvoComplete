@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CDataCollectionUnit id="ArbiterSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.75"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.75"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="CorsairSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.75"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.75"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="FirebatSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.5"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.5"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="GhostSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.5"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.5"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="HydraliskSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.75"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.75"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="ScoutSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.75"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="ValkyrieSCBW">
+        <UpgradeInfoWeapon index="0" DamagePerDice="0.75"/>
+        <UpgradeInfoWeapon index="1" DamagePerDice="0.75"/>
+    </CDataCollectionUnit>
+</Catalog>

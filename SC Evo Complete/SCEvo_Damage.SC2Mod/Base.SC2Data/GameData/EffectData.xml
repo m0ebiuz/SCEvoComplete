@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectSet default="1" id="DamageConcussiveSCBW">
+        <Name value="Effect/Name/DamageConcussiveSCBW"/>
+        <EffectArray value="##id##MediumShields"/>
+        <EffectArray value="##id##LargeShields"/>
+        <EffectArray value="##id##Small"/>
+        <EffectArray value="##id##Medium"/>
+        <EffectArray value="##id##Large"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSet>
+    <CEffectDamage default="1" id="DamageConcussiveSCBWLarge" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageConcussiveSCBWLarge"/>
+        <ImpactUnitValidator value="ConcussiveLargeSCBW"/>
+        <ArmorReduction value="0.25"/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageConcussiveSCBWLargeShields" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageConcussiveSCBWLargeShields"/>
+        <ImpactUnitValidator value="ConcussiveLargeSCBW"/>
+        <ShieldBonus value="15"/>
+        <ArmorReduction value="0.75"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageConcussiveSCBWMedium" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageConcussiveSCBWMedium"/>
+        <ImpactUnitValidator value="ConcussiveMediumSCBW"/>
+        <ArmorReduction value="0.5"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageConcussiveSCBWMediumShields" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageConcussiveSCBWMediumShields"/>
+        <ImpactUnitValidator value="ConcussiveMediumSCBW"/>
+        <ShieldBonus value="10"/>
+        <ArmorReduction value="0.5"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageConcussiveSCBWSmall" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageConcussiveSCBWSmall"/>
+        <ImpactUnitValidator value="ConcussiveSmallSCBW"/>
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectSet default="1" id="DamageExplosiveSCBW">
+        <Name value="Effect/Name/DamageExplosiveSCBW"/>
+        <EffectArray value="##id##SmallShields"/>
+        <EffectArray value="##id##MediumShields"/>
+        <EffectArray value="##id##Small"/>
+        <EffectArray value="##id##Medium"/>
+        <EffectArray value="##id##Large"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSet>
+    <CEffectDamage default="1" id="DamageExplosiveSCBWLarge" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageExplosiveSCBWLarge"/>
+        <ImpactUnitValidator value="ExplosiveLargeSCBW"/>
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageExplosiveSCBWMedium" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageExplosiveSCBWMedium"/>
+        <ImpactUnitValidator value="ExplosiveMediumSCBW"/>
+        <ArmorReduction value="0.75"/>
+        <Amount value="15"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageExplosiveSCBWMediumShields" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageExplosiveSCBWMediumShields"/>
+        <ImpactUnitValidator value="ExplosiveMediumSCBW"/>
+        <ShieldBonus value="5"/>
+        <ArmorReduction value="0.25"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageExplosiveSCBWSmall" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageExplosiveSCBWSmall"/>
+        <ImpactUnitValidator value="ExplosiveSmallSCBW"/>
+        <ArmorReduction value="0.5"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage default="1" id="DamageExplosiveSCBWSmallShields" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/DamageExplosiveSCBWSmallShields"/>
+        <ImpactUnitValidator value="ExplosiveSmallSCBW"/>
+        <ShieldBonus value="10"/>
+        <ArmorReduction value="0.5"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="FirebatSCBWWeapon@CP">
+        <PeriodicEffectArray index="0" value="FirebatSCBWWeapon@DamageConcussive"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="FirebatSCBWWeapon@DamageConcussive" parent="DamageConcussiveSCBW"/>
+    <CEffectDamage id="FirebatSCBWWeapon@DamageConcussiveLarge" parent="DamageConcussiveSCBWLarge">
+        <Amount value="2"/>
+        <Kind value="Splash"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="0.4687" Fraction="1" Validator="ConcussiveLargeSCBW"/>
+        <AreaArray Radius="0.625" Fraction="0.5" Validator="ConcussiveLargeSplashSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.25" Validator="ConcussiveLargeSplashSCBW"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <IncludeArray Effect="FirebatSCBWWeapon@CP" Value="Target"/>
+    </CEffectDamage>
+    <CEffectDamage id="FirebatSCBWWeapon@DamageConcussiveLargeShields" parent="DamageConcussiveSCBWLargeShields">
+        <ShieldBonus value="6"/>
+        <Kind value="Splash"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="0.4687" Fraction="1" Validator="ConcussiveLargeSCBW"/>
+        <AreaArray Radius="0.625" Fraction="0.5" Validator="ConcussiveLargeSplashSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.25" Validator="ConcussiveLargeSplashSCBW"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <IncludeArray Effect="FirebatSCBWWeapon@CP" Value="Target"/>
+    </CEffectDamage>
+    <CEffectDamage id="FirebatSCBWWeapon@DamageConcussiveMedium" parent="DamageConcussiveSCBWMedium">
+        <Amount value="4"/>
+        <Kind value="Splash"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="0.4687" Fraction="1" Validator="ConcussiveMediumSCBW"/>
+        <AreaArray Radius="0.625" Fraction="0.5" Validator="ConcussiveMediumSplashSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.25" Validator="ConcussiveMediumSplashSCBW"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <IncludeArray Effect="FirebatSCBWWeapon@CP" Value="Target"/>
+    </CEffectDamage>
+    <CEffectDamage id="FirebatSCBWWeapon@DamageConcussiveMediumShields" parent="DamageConcussiveSCBWMediumShields">
+        <ShieldBonus value="4"/>
+        <Kind value="Splash"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="0.4687" Fraction="1" Validator="ConcussiveMediumSCBW"/>
+        <AreaArray Radius="0.625" Fraction="0.5" Validator="ConcussiveMediumSplashSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.25" Validator="ConcussiveMediumSplashSCBW"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <IncludeArray Effect="FirebatSCBWWeapon@CP" Value="Target"/>
+    </CEffectDamage>
+    <CEffectDamage id="FirebatSCBWWeapon@DamageConcussiveSmall" parent="DamageConcussiveSCBWSmall">
+        <Amount value="8"/>
+        <Kind value="Splash"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="0.4687" Fraction="1" Validator="ConcussiveSmallSCBW"/>
+        <AreaArray Radius="0.625" Fraction="0.5" Validator="ConcussiveSmallSplashSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.25" Validator="ConcussiveSmallSplashSCBW"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <IncludeArray Effect="FirebatSCBWWeapon@CP" Value="Target"/>
+    </CEffectDamage>
+    <CEffectSet id="GhostSCBWWeapon@DamageConcussive" parent="DamageConcussiveSCBW"/>
+    <CEffectDamage id="GhostSCBWWeapon@DamageConcussiveLarge" parent="DamageConcussiveSCBWLarge">
+        <Amount value="2.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GhostSCBWWeapon@DamageConcussiveLargeShields" parent="DamageConcussiveSCBWLargeShields">
+        <ShieldBonus value="7.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GhostSCBWWeapon@DamageConcussiveMedium" parent="DamageConcussiveSCBWMedium">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GhostSCBWWeapon@DamageConcussiveMediumShields" parent="DamageConcussiveSCBWMediumShields">
+        <ShieldBonus value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GhostSCBWWeapon@DamageConcussiveSmall" parent="DamageConcussiveSCBWSmall">
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectSet id="SpiderMineSCBWWeapon@Set">
+        <EffectArray index="0" value="SpiderMineSCBWWeapon@DamageExplosive"/>
+    </CEffectSet>
+    <CEffectSet id="VultureSCBWWeapon@DamageConcussive" parent="DamageConcussiveSCBW"/>
+    <CEffectDamage id="VultureSCBWWeapon@DamageConcussiveLarge" parent="DamageConcussiveSCBWLarge"/>
+    <CEffectDamage id="VultureSCBWWeapon@DamageConcussiveLargeShields" parent="DamageConcussiveSCBWLargeShields"/>
+    <CEffectDamage id="VultureSCBWWeapon@DamageConcussiveMedium" parent="DamageConcussiveSCBWMedium"/>
+    <CEffectDamage id="VultureSCBWWeapon@DamageConcussiveMediumShields" parent="DamageConcussiveSCBWMediumShields"/>
+    <CEffectDamage id="VultureSCBWWeapon@DamageConcussiveSmall" parent="DamageConcussiveSCBWSmall"/>
+    <CEffectLaunchMissile id="VultureSCBWWeapon@LM">
+        <ImpactEffect value="VultureSCBWWeapon@DamageConcussive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="DragoonSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="DragoonSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge"/>
+    <CEffectDamage id="DragoonSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium"/>
+    <CEffectDamage id="DragoonSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields"/>
+    <CEffectDamage id="DragoonSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall"/>
+    <CEffectDamage id="DragoonSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields"/>
+    <CEffectLaunchMissile id="DragoonSCBWWeapon@LM">
+        <ImpactEffect value="DragoonSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CorsairSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="CorsairSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="5"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveLargeSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveLargeSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveLargeSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="CorsairSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="3.75"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="CorsairSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="1.25"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="CorsairSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="2.5"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="CorsairSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="2.5"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectSet id="ArbiterSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="ArbiterSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="ArbiterSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="7.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ArbiterSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="2.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ArbiterSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ArbiterSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="5"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="ArbiterSCBWWeapon@LM">
+        <ImpactEffect value="ArbiterSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="ScoutSCBWWeaponAir@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="ScoutSCBWWeaponAir@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="14"/>
+    </CEffectDamage>
+    <CEffectDamage id="ScoutSCBWWeaponAir@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="10.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ScoutSCBWWeaponAir@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="3.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="ScoutSCBWWeaponAir@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="7"/>
+    </CEffectDamage>
+    <CEffectDamage id="ScoutSCBWWeaponAir@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="7"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="ScoutSCBWWeaponAir@LMLeft">
+        <ImpactEffect value="ScoutSCBWWeaponAir@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="ScoutSCBWWeaponAir@LMRight">
+        <ImpactEffect value="ScoutSCBWWeaponAir@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="GoliathSCBWWeaponAir@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="GoliathSCBWWeaponAir@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathSCBWWeaponAir@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="7.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathSCBWWeaponAir@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="2.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathSCBWWeaponAir@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="GoliathSCBWWeaponAir@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="5"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="GoliathSCBWWeaponAir@LM">
+        <ImpactEffect value="GoliathSCBWWeaponAir@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="SiegeTankSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="SiegeTankSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="22.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="7.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="15"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="15"/>
+    </CEffectDamage>
+    <CEffectSet id="SiegeTankSCBWSiegedWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="SiegeTankSCBWSiegedWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="70"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.3125" Fraction="1" Validator="ExplosiveLargeSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.5" Validator="ExplosiveLargeSplashSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.25" Validator="ExplosiveLargeSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWSiegedWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="52.5"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.3125" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWSiegedWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="17.5"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.3125" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWSiegedWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="35"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.3125" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="SiegeTankSCBWSiegedWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="35"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.3125" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="0.7812" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectSet id="ValkyrieSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="ValkyrieSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="6"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveLargeSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveLargeSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveLargeSplashSCBW"/>
+        <IncludeArray Effect="ValkyrieSCBWWeapon@CP" Value="Target"/>
+        <SearchFilters value="Air,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CEffectDamage id="ValkyrieSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="4.5"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <IncludeArray Effect="ValkyrieSCBWWeapon@CP" Value="Target"/>
+        <SearchFilters value="Air,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CEffectDamage id="ValkyrieSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="1.5"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <IncludeArray Effect="ValkyrieSCBWWeapon@CP" Value="Target"/>
+        <SearchFilters value="Air,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CEffectDamage id="ValkyrieSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="3"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <IncludeArray Effect="ValkyrieSCBWWeapon@CP" Value="Target"/>
+        <SearchFilters value="Air,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CEffectDamage id="ValkyrieSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="3"/>
+        <Kind value="Splash"/>
+        <AreaArray Radius="0.1562" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.5625" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <IncludeArray Effect="ValkyrieSCBWWeapon@CP" Value="Target"/>
+        <SearchFilters value="Air,Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="ValkyrieSCBWWeapon@LM">
+        <ImpactEffect value="ValkyrieSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="SpiderMineSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="SpiderMineSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="125"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.5625" Fraction="1" Validator="ExplosiveLargeSCBW"/>
+        <AreaArray Radius="2.3437" Fraction="0.5" Validator="ExplosiveLargeSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveLargeSplashSCBW"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="SpiderMineSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="93.75"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.5625" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="2.3437" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="SpiderMineSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="31.25"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.5625" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="2.3437" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="SpiderMineSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="62.5"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.5625" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="2.3437" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="SpiderMineSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="62.5"/>
+        <Kind value="Splash"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.5625" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="2.3437" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="3.125" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectSet id="WraithSCBWWeaponAir@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="WraithSCBWWeaponAir@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge"/>
+    <CEffectDamage id="WraithSCBWWeaponAir@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium"/>
+    <CEffectDamage id="WraithSCBWWeaponAir@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields"/>
+    <CEffectDamage id="WraithSCBWWeaponAir@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall"/>
+    <CEffectDamage id="WraithSCBWWeaponAir@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields"/>
+    <CEffectLaunchMissile id="WraithSCBWWeaponAir@LMLeft">
+        <ImpactEffect value="WraithSCBWWeaponAir@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="MissileTurretSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="MissileTurretSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge"/>
+    <CEffectDamage id="MissileTurretSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium"/>
+    <CEffectDamage id="MissileTurretSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields"/>
+    <CEffectDamage id="MissileTurretSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall"/>
+    <CEffectDamage id="MissileTurretSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields"/>
+    <CEffectLaunchMissile id="MissileTurretSCBWWeapon@LM">
+        <ImpactEffect value="MissileTurretSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HydraliskSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="HydraliskSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="HydraliskSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="7.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="HydraliskSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="2.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="HydraliskSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectDamage id="HydraliskSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="5"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="HydraliskSCBWWeapon@LM">
+        <ImpactEffect value="HydraliskSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="DevourerSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="DevourerSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectDamage id="DevourerSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="18.75"/>
+    </CEffectDamage>
+    <CEffectDamage id="DevourerSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="6.25"/>
+    </CEffectDamage>
+    <CEffectDamage id="DevourerSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="12.5"/>
+    </CEffectDamage>
+    <CEffectDamage id="DevourerSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="12.5"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="DevourerSCBWWeapon@LM">
+        <ImpactEffect value="DevourerSCBWWeapon@DamageExplosive"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="InfestedTerranSCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="InfestedTerranSCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="500"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <Kind value="Splash"/>
+        <Death value="Disintegrate"/>
+        <AreaArray Radius="0.625" Fraction="1" Validator="ExplosiveLargeSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.5" Validator="ExplosiveLargeSplashSCBW"/>
+        <AreaArray Radius="1.875" Fraction="0.25" Validator="ExplosiveLargeSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="InfestedTerranSCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="375"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <Kind value="Splash"/>
+        <Death value="Disintegrate"/>
+        <AreaArray Radius="0.625" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="1.875" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="InfestedTerranSCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="125"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <Kind value="Splash"/>
+        <Death value="Disintegrate"/>
+        <AreaArray Radius="0.625" Fraction="1" Validator="ExplosiveMediumSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.5" Validator="ExplosiveMediumSplashSCBW"/>
+        <AreaArray Radius="1.875" Fraction="0.25" Validator="ExplosiveMediumSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="InfestedTerranSCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="250"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <Kind value="Splash"/>
+        <Death value="Disintegrate"/>
+        <AreaArray Radius="0.625" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="1.875" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="InfestedTerranSCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="250"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <Kind value="Splash"/>
+        <Death value="Disintegrate"/>
+        <AreaArray Radius="0.625" Fraction="1" Validator="ExplosiveSmallSCBW"/>
+        <AreaArray Radius="1.25" Fraction="0.5" Validator="ExplosiveSmallSplashSCBW"/>
+        <AreaArray Radius="1.875" Fraction="0.25" Validator="ExplosiveSmallSplashSCBW"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectSet id="InfestedTerranSCBWWeapon@Set">
+        <EffectArray index="0" value="InfestedTerranSCBWWeapon@DamageExplosive"/>
+    </CEffectSet>
+    <CEffectSet id="SunkenColonySCBWWeapon@DamageExplosive" parent="DamageExplosiveSCBW"/>
+    <CEffectDamage id="SunkenColonySCBWWeapon@DamageExplosiveLarge" parent="DamageExplosiveSCBWLarge">
+        <Amount value="40"/>
+    </CEffectDamage>
+    <CEffectDamage id="SunkenColonySCBWWeapon@DamageExplosiveMedium" parent="DamageExplosiveSCBWMedium">
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectDamage id="SunkenColonySCBWWeapon@DamageExplosiveMediumShields" parent="DamageExplosiveSCBWMediumShields">
+        <ShieldBonus value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="SunkenColonySCBWWeapon@DamageExplosiveSmall" parent="DamageExplosiveSCBWSmall">
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectDamage id="SunkenColonySCBWWeapon@DamageExplosiveSmallShields" parent="DamageExplosiveSCBWSmallShields">
+        <ShieldBonus value="20"/>
+    </CEffectDamage>
+</Catalog>

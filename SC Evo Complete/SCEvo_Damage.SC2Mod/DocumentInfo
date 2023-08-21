@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <Dependencies>
+        <Value>file:Mods\SC Evolution Complete/SCEvo_Core.SC2Mod</Value>
+    </Dependencies>
+</DocInfo>

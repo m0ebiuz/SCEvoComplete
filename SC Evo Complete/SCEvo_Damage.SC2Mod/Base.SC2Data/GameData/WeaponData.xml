@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="ArbiterSCBWWeapon">
+        <DisplayEffect value="ArbiterSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CorsairSCBWWeapon">
+        <Effect value="CorsairSCBWWeapon@DamageExplosive"/>
+        <DisplayEffect value="CorsairSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DevourerSCBWWeapon">
+        <DisplayEffect value="DevourerSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="DragoonSCBWWeapon">
+        <DisplayEffect value="DragoonSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FirebatSCBWWeapon">
+        <DisplayEffect value="FirebatSCBWWeapon@DamageConcussiveSmall"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GhostSCBWWeapon">
+        <Effect value="GhostSCBWWeapon@DamageConcussive"/>
+        <DisplayEffect value="GhostSCBWWeapon@DamageConcussiveSmall"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GoliathSCBWWeaponAir">
+        <DisplayEffect value="GoliathSCBWWeaponAir@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="HydraliskSCBWWeapon">
+        <DisplayEffect value="HydraliskSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfestedTerranSCBWWeapon">
+        <DisplayEffect value="InfestedTerranSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MissileTurretSCBWWeapon">
+        <DisplayEffect value="MissileTurretSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ScoutSCBWWeaponAir">
+        <DisplayEffect value="ScoutSCBWWeaponAir@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SiegeTankSCBWSiegedWeapon">
+        <Effect value="SiegeTankSCBWSiegedWeapon@DamageExplosive"/>
+        <DisplayEffect value="SiegeTankSCBWSiegedWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SiegeTankSCBWWeapon">
+        <Effect value="SiegeTankSCBWWeapon@DamageExplosive"/>
+        <DisplayEffect value="SiegeTankSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpiderMineSCBWWeapon">
+        <DisplayEffect value="SpiderMineSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SunkenColonySCBWWeapon">
+        <Effect value="SunkenColonySCBWWeapon@DamageExplosive"/>
+        <DisplayEffect value="SunkenColonySCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ValkyrieSCBWWeapon">
+        <DisplayEffect value="ValkyrieSCBWWeapon@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VultureSCBWWeapon">
+        <DisplayEffect value="VultureSCBWWeapon@DamageConcussiveSmall"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="WraithSCBWWeaponAir">
+        <DisplayEffect value="WraithSCBWWeaponAir@DamageExplosiveLarge"/>
+    </CWeaponLegacy>
+</Catalog>

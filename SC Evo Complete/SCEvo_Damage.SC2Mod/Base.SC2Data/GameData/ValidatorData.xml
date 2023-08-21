@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitFilters id="ConcussiveLargeSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="Armored;Light"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ConcussiveMediumSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="-;Light,Armored"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ConcussiveSmallSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="Light;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ExplosiveLargeSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="Armored;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ExplosiveMediumSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="-;Light,Armored"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ExplosiveSmallSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Filters value="Light;Armored"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="ConcussiveLargeSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ConcussiveLargeSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ConcussiveMediumSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ConcussiveMediumSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ConcussiveSmallSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ConcussiveSmallSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ExplosiveLargeSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ExplosiveLargeSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ExplosiveMediumSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ExplosiveMediumSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ExplosiveSmallSplashSCBW">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <CombineArray value="ExplosiveSmallSCBW"/>
+        <CombineArray value="IsNotBuried"/>
+        <Type value="And"/>
+    </CValidatorCombine>
+</Catalog>
